@@ -1,3 +1,7 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+
 from random import random
 
 from diagnostic_msgs.msg import DiagnosticArray
