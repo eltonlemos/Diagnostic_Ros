@@ -20,6 +20,18 @@ target_compile_features(diagnostic PUBLIC c_std_99 cxx_std_17)  # Require C99 an
 install(TARGETS diagnostic
   DESTINATION lib/${PROJECT_NAME})
 
+install( # launch descriptor
+  FILES src/diagnostics.launch.py
+  DESTINATION share/${PROJECT_NAME}
+)
+install( # example publisher
+  PROGRAMS src/diagnostic.py
+  DESTINATION lib/${PROJECT_NAME}
+)
+install( # example aggregator configration
+  FILES src/analyzers.yaml
+  DESTINATION share/${PROJECT_NAME}
+)
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
   # the following line skips the linter which checks for copyrights
