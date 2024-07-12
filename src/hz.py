@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
 # Copyright (c) 2008, Willow Garage, Inc.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -43,12 +46,21 @@ from rclpy.qos import qos_profile_sensor_data
 from ros2cli.node.direct import add_arguments as add_direct_node_arguments
 from ros2cli.node.direct import DirectNode
 from ros2topic.api import get_msg_class
-from ros2topic.api import positive_int
+# from ros2topic.api import positive_int
 from ros2topic.api import TopicNameCompleter
 from ros2topic.verb import VerbExtension
+from argparse import ArgumentTypeError
 
 DEFAULT_WINDOW_SIZE = 10000
 
+def positive_int(string):
+    try:
+        value = int(string)
+    except ValueError:
+        value = -1
+    if value <= 0:
+        raise ArgumentTypeError('value must be a positive integer')
+    return value
 
 class HzVerb(VerbExtension):
     """Print the average publishing rate to screen."""
