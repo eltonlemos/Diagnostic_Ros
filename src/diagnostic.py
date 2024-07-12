@@ -39,24 +39,6 @@ class DiagnosticTalker(Node):
     def timer_callback(self):
         self.array.header.stamp = ROSClock().now().to_msg()
 
-        # Random diagnostics status
-        level = random()
-        self.array.status[1].level = DiagnosticStatus.OK
-        self.array.status[1].message = 'OK'
-        self.array.status[3].level = DiagnosticStatus.OK
-        self.array.status[3].message = 'OK'
-        self.array.status[4].level = DiagnosticStatus.OK
-        self.array.status[4].message = 'OK'
-        if level > .5:
-            self.array.status[1].level = DiagnosticStatus.WARN
-            self.array.status[1].message = 'Warning'
-        if level > .7:
-            self.array.status[3].level = DiagnosticStatus.WARN
-            self.array.status[3].message = 'Warning'
-        if level > .95:
-            self.array.status[4].level = DiagnosticStatus.ERROR
-            self.array.status[4].message = 'Error'
-
         self.pub.publish(self.array)
 
 
