@@ -19,7 +19,7 @@ class DiagnosticTalker(Node):
         super().__init__('diagnostic_talker')
         self.i = 0
         self.pub = self.create_publisher(DiagnosticArray,
-                                         '/diagnostic_moog',
+                                         '/diagnostics',
                                          qos_profile_system_default)
         timer_period = 1.0
         self.tmr = self.create_timer(timer_period, self.timer_callback)
