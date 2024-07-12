@@ -23,12 +23,18 @@ class DiagnosticTalker(Node):
         self.array = DiagnosticArray()
         self.array.status = [
             # lidar
+            # DiagnosticStatus(level=DiagnosticStatus.OK,
+            #                  name='/ouster/points', message='OK'),
+            # DiagnosticStatus(level=DiagnosticStatus.OK,
+            #                  name='/livox/lidar/pcd2', message='OK'),
+            # DiagnosticStatus(level=DiagnosticStatus.OK,
+            #                  name='/livox/lidar', message='OK'),
             DiagnosticStatus(level=DiagnosticStatus.OK,
-                             name='/ouster/points', message='OK'),
+                             name='/arms/left/motor', message='OK'),
             DiagnosticStatus(level=DiagnosticStatus.OK,
-                             name='/livox/lidar/pcd2', message='OK'),
+                             name='/arms/right/motor', message='OK'),
             DiagnosticStatus(level=DiagnosticStatus.OK,
-                             name='/livox/lidar', message='OK'),
+                             name='/legs/left/motor', message='OK'),
             DiagnosticStatus(level=DiagnosticStatus.OK,
                              name='/legs/right/motor', message='OK'),
 
