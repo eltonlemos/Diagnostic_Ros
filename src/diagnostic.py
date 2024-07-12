@@ -29,9 +29,9 @@ class DiagnosticTalker(Node):
             # lidar
             DiagnosticStatus(level=DiagnosticStatus.OK,
                              name='/ouster/points', message='OK'),
-            DiagnosticStatus(level=DiagnosticStatus.WARNING,
+            DiagnosticStatus(level=DiagnosticStatus.WARN,
                              name='/livox/lidar/pcd2', message='OK'),
-            DiagnosticStatus(level=DiagnosticStatus.OK,
+            DiagnosticStatus(level=DiagnosticStatus.ERROR,
                              name='/livox/lidar', message='OK'),
 ]
 
