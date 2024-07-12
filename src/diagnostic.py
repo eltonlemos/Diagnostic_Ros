@@ -23,34 +23,34 @@ class DiagnosticTalker(Node):
         self.array = DiagnosticArray()
         self.array.status = [
             # lidar
+            # DiagnosticStatus(level=DiagnosticStatus.OK,
+            #                  name='/ouster/points', message='OK'),
+            # DiagnosticStatus(level=DiagnosticStatus.OK,
+            #                  name='/livox/lidar/pcd2', message='OK'),
+            # DiagnosticStatus(level=DiagnosticStatus.OK,
+            #                  name='/livox/lidar', message='OK'),
             DiagnosticStatus(level=DiagnosticStatus.OK,
-                             name='/ouster/points', message='OK'),
+                             name='/arms/left/motor', message='OK'),
             DiagnosticStatus(level=DiagnosticStatus.OK,
-                             name='/livox/lidar/pcd2', message='OK'),
+                             name='/arms/right/motor', message='OK'),
             DiagnosticStatus(level=DiagnosticStatus.OK,
-                             name='/livox/lidar', message='OK'),
-            # DiagnosticStatus(level=DiagnosticStatus.OK,
-            #                  name='/arms/left/motor', message='OK'),
-            # DiagnosticStatus(level=DiagnosticStatus.OK,
-            #                  name='/arms/right/motor', message='OK'),
-            # DiagnosticStatus(level=DiagnosticStatus.OK,
-            #                  name='/legs/left/motor', message='OK'),
-            # DiagnosticStatus(level=DiagnosticStatus.OK,
-            #                  name='/legs/right/motor', message='OK'),
+                             name='/legs/left/motor', message='OK'),
+            DiagnosticStatus(level=DiagnosticStatus.OK,
+                             name='/legs/right/motor', message='OK'),
 
-            # # Sensors
-            # DiagnosticStatus(level=DiagnosticStatus.OK,
-            #                  name='/sensors/left/cam', message='OK'),
-            # DiagnosticStatus(level=DiagnosticStatus.OK,
-            #                  name='/sensors/right/cam', message='OK'),
-            # DiagnosticStatus(level=DiagnosticStatus.OK,
-            #                  name='/sensors/front/cam', message='OK'),
-            # DiagnosticStatus(level=DiagnosticStatus.OK,
-            #                  name='/sensors/rear/cam', message='OK'),
+            # Sensors
+            DiagnosticStatus(level=DiagnosticStatus.OK,
+                             name='/sensors/left/cam', message='OK'),
+            DiagnosticStatus(level=DiagnosticStatus.OK,
+                             name='/sensors/right/cam', message='OK'),
+            DiagnosticStatus(level=DiagnosticStatus.OK,
+                             name='/sensors/front/cam', message='OK'),
+            DiagnosticStatus(level=DiagnosticStatus.OK,
+                             name='/sensors/rear/cam', message='OK'),
 
-            # # Optional
-            # DiagnosticStatus(level=DiagnosticStatus.OK,
-            #                  name='/optional/runtime/analyzer', message='OK'),
+            # Optional
+            DiagnosticStatus(level=DiagnosticStatus.OK,
+                             name='/optional/runtime/analyzer', message='OK'),
         ]
 
 
