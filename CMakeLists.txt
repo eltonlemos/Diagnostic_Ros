@@ -28,6 +28,10 @@ install( # example publisher
   PROGRAMS src/diagnostic.py
   DESTINATION lib/${PROJECT_NAME}
 )
+install( # example publisher
+  PROGRAMS src/hz.py
+  DESTINATION lib/${PROJECT_NAME}
+)
 install( # example aggregator configration
   FILES src/analyzers.yaml
   DESTINATION share/${PROJECT_NAME}
