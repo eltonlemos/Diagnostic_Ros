@@ -351,5 +351,5 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
 
-    rclpy.init(args=None)
+    # rclpy.init(args=None)
     main(args)
