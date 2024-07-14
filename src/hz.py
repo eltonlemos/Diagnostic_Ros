@@ -277,3 +277,27 @@ def _rostopic_hz(node, topic, window_size=DEFAULT_WINDOW_SIZE, filter_expr=None,
 
     node.destroy_node()
     rclpy.shutdown()
+
+if __name__ == '__main__':
+    import sys
+    from argparse import ArgumentParser
+
+    parser = ArgumentParser(description='Print the average publishing rate to screen.')
+    parser.add_argument('topic_name', help="Name of the ROS topic to listen to (e.g. '/chatter')")
+    parser.add_argument(
+        '--window', '-w',
+        dest='window_size', type=int, default=DEFAULT_WINDOW_SIZE,
+        help='window size, in # of messages, for calculating rate (default: %d)' % DEFAULT_WINDOW_SIZE, metavar='WINDOW')
+    parser.add_argument(
+        '--filter',
+        dest='filter_expr', default=None,
+        help='only measure messages matching the specified Python expression', metavar='EXPR')
+    parser.add_argument(
+        '--wall-time',
+        dest='use_wtime', default=False, action='store_true',
+        help='calculates rate using wall time which can be helpful when clock is not published during simulation')
+
+    args = parser.parse_args()
+
+    rclpy.init(args=None)
+    main(args)
