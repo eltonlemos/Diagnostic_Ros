@@ -336,7 +336,7 @@ if __name__ == '__main__':
 
     parser = ArgumentParser(description='Print the average publishing rate to screen.')
     parser.add_argument(
-    'topic_names', nargs='+',
+    'topic_name', nargs='+',
     help="Names of the ROS topics to listen to (e.g. '/chatter /topic2')")
     parser.add_argument(
         '--window', '-w',
