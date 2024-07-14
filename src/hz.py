@@ -335,7 +335,9 @@ if __name__ == '__main__':
     from argparse import ArgumentParser
 
     parser = ArgumentParser(description='Print the average publishing rate to screen.')
-    parser.add_argument('topic_name', help="Name of the ROS topic to listen to (e.g. '/chatter')")
+    parser.add_argument(
+    'topic_names', nargs='+',
+    help="Names of the ROS topics to listen to (e.g. '/chatter /topic2')")
     parser.add_argument(
         '--window', '-w',
         dest='window_size', type=int, default=DEFAULT_WINDOW_SIZE,
