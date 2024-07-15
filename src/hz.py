@@ -94,7 +94,8 @@ class HzVerb(VerbExtension):
 
 
 def main(args):
-    topics = args.topic_name
+    # topics = args.topic_name
+    topics = ["/navsatfix", "/gpsfix" ]
     if args.filter_expr:
         def expr_eval(expr):
             def eval_fn(m):
@@ -300,11 +301,11 @@ def _rostopic_hz(node, topics, window_size=DEFAULT_WINDOW_SIZE, filter_expr=None
     topics_len = len(topics)
     for topic in topics:
         msg_class = get_msg_class(
-            node, topic, blocking=True, include_hidden_topics=True)
+            node, topic, blocking=False, include_hidden_topics=True)
 
-        if msg_class is None:
-            node.destroy_node()
-            return
+        # if msg_class is None:
+        #     node.destroy_node()
+        #     return
 
         node.create_subscription(
             msg_class,
@@ -335,9 +336,9 @@ if __name__ == '__main__':
     from argparse import ArgumentParser
 
     parser = ArgumentParser(description='Print the average publishing rate to screen.')
-    parser.add_argument(
-    'topic_name', nargs='+',
-    help="Names of the ROS topics to listen to (e.g. '/chatter /topic2')")
+    # parser.add_argument(
+    # 'topic_name', nargs='+',
+    # help="Names of the ROS topics to listen to (e.g. '/chatter /topic2')", default=["/diagnostics", "/navsatfix"])
     parser.add_argument(
         '--window', '-w',
         dest='window_size', type=int, default=DEFAULT_WINDOW_SIZE,
