@@ -299,6 +299,7 @@ def _rostopic_hz(node, topics, window_size=DEFAULT_WINDOW_SIZE, filter_expr=None
     # pause hz until topic is published
     rt = ROSTopicHz(node, window_size, filter_expr=filter_expr, use_wtime=use_wtime)
     topics_len = len(topics)
+    topic_dict = []
     for topic in topics:
         msg_class = get_msg_class(
             node, topic, blocking=False, include_hidden_topics=True)
@@ -306,7 +307,9 @@ def _rostopic_hz(node, topics, window_size=DEFAULT_WINDOW_SIZE, filter_expr=None
         # if msg_class is None:
         #     node.destroy_node()
         #     return
-
+        topic_dict[topic] = msg_class
+        if msg_class is None:
+            continue
         node.create_subscription(
             msg_class,
             topic,
