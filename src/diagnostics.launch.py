@@ -3,7 +3,7 @@
 import launch
 import launch_ros.actions
 
-analyzer_params_filepath = "/home/icepeng/catkin_ws/src/diagnostic_moog/src/analyzers.yaml"
+analyzer_params_filepath = "src/diagnostic_moog/config/analyzers.yaml"
 # add_analyzer_params_filepath = "@ADD_ANALYZER_PARAMS_FILEPATH@"
 
 

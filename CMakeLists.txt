@@ -33,7 +33,11 @@ install( # example publisher
   DESTINATION lib/${PROJECT_NAME}
 )
 install( # example aggregator configration
-  FILES src/analyzers.yaml
+  FILES config/analyzers.yaml
+  DESTINATION share/${PROJECT_NAME}
+)
+install( # example aggregator configration
+  FILES config/topics.yaml
   DESTINATION share/${PROJECT_NAME}
 )
 if(BUILD_TESTING)
