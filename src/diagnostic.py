@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-# Copyright (c) 2008, Willow Garage, Inc.
-#
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
 #
@@ -28,9 +26,6 @@
 # CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
 # ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 # POSSIBILITY OF SUCH DAMAGE.
-
-# This file is originally from:
-# https://github.com/ros/ros_comm/blob/6e5016f4b2266d8a60c9a1e163c4928b8fc7115e/tools/rostopic/src/rostopic/__init__.py
 
 from collections import defaultdict
 
@@ -59,7 +54,7 @@ from diagnostic_msgs.msg import DiagnosticStatus
 import yaml
 from rclpy.qos import qos_profile_system_default
 from argparse import ArgumentTypeError
-# from rclpy.qos import qos_profile_default
+
 DEFAULT_WINDOW_SIZE = 10000
 PKG = 'diagnostic_aggregator'
 
@@ -74,29 +69,6 @@ def positive_int(string):
 
 class HzVerb(VerbExtension):
     """Print the average publishing rate to screen."""
-
-    # def add_arguments(self, parser, cli_name):
-    #     arg = parser.add_argument(
-    #         '--config',"-c",
-    #         dest='path', type = str, default = "config/topics.yaml"
-    #         help="Name of the ROS topic to listen to (e.g. '/chatter')")
-    #     arg.completer = TopicNameCompleter(
-    #         include_hidden_topics_key='include_hidden_topics')
-    #     parser.add_argument(
-    #         '--window', '-w',
-    #         dest='window_size', type=positive_int, default=DEFAULT_WINDOW_SIZE,
-    #         help='window size, in # of messages, for calculating rate '
-    #              '(default: %d)' % DEFAULT_WINDOW_SIZE, metavar='WINDOW')
-    #     parser.add_argument(
-    #         '--filter',
-    #         dest='filter_expr', default=None,
-    #         help='only measure messages matching the specified Python expression', metavar='EXPR')
-    #     parser.add_argument(
-    #         '--wall-time',
-    #         dest='use_wtime', default=False, action='store_true',
-    #         help='calculates rate using wall time which can be helpful'
-    #              ' when clock is not published during simulation')
-    #     add_direct_node_arguments(parser)
 
     def main(self, *, args):
         return main(args)
