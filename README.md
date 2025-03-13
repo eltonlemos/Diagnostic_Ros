@@ -113,6 +113,10 @@ analyzers:
   - [`topics.yaml`](config/topics.yaml)
   - [`analyzers.yaml`](config/analyzers.yaml)
 
+## Visualization in Foxglove
+
+The diagnostic data can be visualized in Foxglove Studio, providing real-time monitoring of system health. Below is an example of how it looks in Foxglove:
+![Fox Glove](https://github.com/user-attachments/assets/929ecbe3-9e29-4d44-8b4b-fff2f621b69c)
 
 ## License
 
