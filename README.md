@@ -113,19 +113,6 @@ analyzers:
   - [`topics.yaml`](config/topics.yaml)
   - [`analyzers.yaml`](config/analyzers.yaml)
 
-### Building and Testing
-
-To rebuild after making changes:
-
-```bash
-colcon build --packages-select diagnostic_moog
-```
-
-To run tests (if applicable):
-
-```bash
-colcon test --packages-select diagnostic_moog
-```
 
 ## License
 
@@ -133,5 +120,5 @@ This project is distributed under the BSD License.
 
 ## Contributors
 
-- [Your Name](https://github.com/yourgithub)
+- [EltonLemos](https://github.com/eltonlemos)
 
